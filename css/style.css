@@ -99,12 +99,12 @@ html, body {
 
 @media (max-width: 575px) {
     .text__name-week {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .block-result__container {
-        padding: 10px 20px;
-        height: 50px;
+        /* padding: 10px 20px; */
+        height: auto;
     }
 }
 
