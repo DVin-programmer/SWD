@@ -1,48 +1,32 @@
-// import DateTime from 'luxon/src/datetime.js'
-// const date = DateTime.now().weekNumber
-// console.log(`The current week number is ${date}`)
+document.addEventListener("DOMContentLoaded", function () {
+  let currentDate = new Date();
+  // let currentDate = new Date("2022-09-08");
 
-var DateTime = luxon.DateTime;
-var currentWeekInYear = DateTime.now().weekNumber;
-// console.log(`Текущая неделя ${currentWeekInYear}`);
+  let currentYear = currentDate.getFullYear();
+  let currentMonth = currentDate.getMonth() + 1;
+  let currentDay = currentDate.getDate();
 
-// const dateLuxon = luxon.DateTime.local( 2005 );
-// let d = '2022-09-05';
-// let date = d.getDate();
-// let month = d.getMonth()+1;
-// let year = d.getYear();
-// const dateLuxon = luxon.DateTime.local( 2005 );
-// const weekDate = dateLuxon.set( { weekNumber: 1 } );
-// const startDate = weekDate.set( { weekday: 1 } );
-// const endDate = weekDate.set( { weekday: 7 } );
+  let today =
+    currentYear +
+    "-" +
+    ("0" + currentMonth).slice(-2) +
+    "-" +
+    ("0" + currentDay).slice(-2);
+  console.log(`Сегодня ${today}`);
 
-// console.log( date.toISODate(), weekDate.toISODate(), startDate.toISODate(), endDate.toISODate() );
-// console.log(dateLuxon.weekNumber);
-// console.log(date, month, year);
+  // Изменяем месяц для удобства выбора начала семестра
+  let dateStart;
+  if (currentMonth >= 9) {
+    dateStart = currentYear + "-" + "09-01";
+  } else {
+    dateStart = currentYear + "-" + "02-01";
+  }
 
-// Определитель недели
-function defineWeek() {
-  let dateInput = document.getElementById("currentDate").value;
-  console.log("Дата в Input: ", dateInput);
-  // 2022-09-05
-  // let upperWeek  = new Date(date);
-  dateInput = new Date(dateInput);
-  console.log(dateInput);
-  let day = dateInput.getDate();
-  let month = dateInput.getMonth() + 1;
-  let year = dateInput.getFullYear();
-  console.log(day, month, year);
+  // document.getElementById("currentDate").value = today;
+  document.getElementById("currentDate").value = dateStart;
+});
 
-  let date = luxon.DateTime.local(year, month, day);
-  // console.log(upperWeek.getDate(), upperWeek.getMonth()+1);
-
-  var numberUpperWeek = date.weekNumber;
-  console.log(`Номер верхней недели в году ${numberUpperWeek}`);
-
-  // https://moment.github.io/luxon/#/install
-}
-
-// проверка четности числа
+// Проверка четности числа
 function even(number) {
   if (number % 2 == 0) {
     return true;
@@ -51,4 +35,61 @@ function even(number) {
   }
 }
 
-// console.log(even(3));
+// Определитель недели
+function defineWeek() {
+  let dateInput = document.getElementById("currentDate").value;
+  // console.log("Дата в Input: ", dateInput);
+
+  dateInput = new Date(dateInput);
+  // console.log(dateInput);
+
+  let day = dateInput.getDate();
+  let month = dateInput.getMonth() + 1;
+  let year = dateInput.getFullYear();
+  // console.log(day, month, year);
+
+  let date = luxon.DateTime.local(year, month, day);
+
+  let numberUpperWeek = date.weekNumber;
+  // console.log(`Номер верхней недели в году: ${numberUpperWeek}`);
+
+  let evenUpperWeek = even(numberUpperWeek);
+  // console.log(`Проверка четности недели: ${evenUpperWeek}`);
+
+  let currentWeek = luxon.DateTime.now().weekNumber;
+  // console.log(`Текущая неделя: ${currentWeek}`);
+
+  let evenCurrentWeek = even(currentWeek);
+  // console.log(`Проверка четности текущей недели: ${evenCurrentWeek}`);
+
+  // ---------------------------------------
+  // Выбор недели
+  let selectedWeek = document.getElementById(
+    "block-week-selector__select"
+  ).selectedIndex;
+  // console.log(selectedWeek);
+
+  switch (selectedWeek) {
+    case 0:
+      arrWeekNames = ["верхняя", "нижняя"];
+      break;
+    case 1:
+      arrWeekNames = ["четная", "нечетная"];
+      break;
+  }
+  // console.log(arrWeekNames);
+  // ---------------------------------------
+
+  let week;
+  if (evenUpperWeek == evenCurrentWeek) {
+    // week = "верхняя";
+    week = arrWeekNames[0];
+  } else {
+    // week = "нижняя";
+    week = arrWeekNames[1];
+  }
+  console.log(`Сейчас ${week} неделя`);
+
+  let result = document.getElementsByClassName("text__name-week")[0];
+  result.innerHTML = `Сейчас ${week} неделя`;
+}

@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "PTSansbold";
+    src: url("fonts/PTSansbold.woff") format("truetype");
+}
+
+@font-face {
+    font-family: "Bitter-ExtraBold";
+    src: url("fonts/Bitter-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Bitter-Light";
+    src: url("fonts/Bitter-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Bitter-Regular";
+    src: url("fonts/Bitter-Regular.ttf") format("truetype");
+}

@@ -1,17 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Определитель недели</title>
     <script src="./luxon.js"></script>
-    <!-- <script src="./luxon/src/luxon.js"></script> -->
     <script src="./src.js"></script>
-</head>
-<body>
-    Введите дату начала обучения в этом семестре:
-    <input type="date" id="currentDate" value="2022-09-05">
-    <button type="submit" id="submit" onclick="defineWeek()">Ок</button>
-</body>
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/font_styles.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+  <body>
+    <!-- <label for="name">Name (4 to 8 characters):</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      minlength="4"
+      maxlength="8"
+      size="10"
+    /> -->
+    <div class="container header__container">
+      <div class="row header__row">
+        <div
+          class="col header__columns text-center text-sm-center text-md-center text-lg-center"
+        >
+          <span class="header__title title">Определитель текущей недели</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="block-week-selector__container container container-md">
+      <div class="row block-week-selector__row">
+        <div
+          class="block-week-selector__columns col-12 col-sm-12 col-md-10 offset-lg-2 col-lg-8"
+        >
+          <label for="block-week-selector__select" class="text__label"
+            >Выберите формат вывода недели:</label
+          >
+          <select id="block-week-selector__select" name="weekSelector">
+            <option value="upper_lower">Верхняя/Нижняя</option>
+            <option value="even_odd">Четная/Нечетная</option>
+          </select>
+        </div>
+      </div>
+      <div class="row block-week-selector__row">
+        <div
+          class="block-week-selector__columns col-12 col-sm-12 col-md-10 offset-lg-2 col-lg-8"
+        >
+          <label for="currentDate" class="text__label"
+            >Введите дату начала обучения в этом семестре:</label
+          >
+          <br />
+          <input
+            class="block-week-selector__input"
+            type="date"
+            id="currentDate"
+            value="2022-09-05"
+          />
+          <button
+            class="block-week-selector__button btn btn-success"
+            type="submit"
+            id="submit"
+            onclick="defineWeek()"
+          >
+            Подтвердить
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="block-result__container container container-md container-sm container-lg"
+    >
+      <div class="row block-result__row">
+        <div
+          class="block-result__columns col-12 col-sm-12 offset-md-2 col-md-10 offset-lg-2 col-lg-8"
+        >
+          <div class="block-result__text">
+            <span class="text__name-week"
+              >Нажмите «Подтвердить», чтобы узнать текущую неделю.</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="footer__text fixed-bottom text-center"
+        >© 2022, Винокурова Д.В.</span
+      >
+    </div>
+  </body>
 </html>

@@ -1,0 +1,119 @@
+* {
+    font-size: 14px;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    min-width: 320px;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* header */
+.header__row {
+    box-shadow: 1px 1px 5px #fb9b2a;
+    background-color: #ffe797;
+    color: #ff6a00;
+    height: 40px;
+}
+
+.header__title {
+    padding: 7px;
+    margin-right: 5px;
+    font-size: 1.4em;
+    font-weight: 600;
+    font-family: "PTSansbold";
+}
+
+.text__label {
+    font-family: "Bitter-Regular";
+    font-size: 1.1em;
+}
+
+/* block-week-selector */
+.block-week-selector__container {
+    margin-top: 15px;
+    padding: 20px 20px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px #bfcbc0;
+    color: #000000;
+}
+
+.block-week-selector__row {
+    padding-top: 10px;
+}
+
+.block-week-selector__input {
+    margin-left: 10px;
+    font-family: "Bitter-Regular";
+}
+
+#block-week-selector__select {
+    margin-left: 10px;
+    font-family: "Bitter-Regular";
+    font-weight: 400;
+}
+
+.block-week-selector__button {
+    margin-left: 10px;
+    /* width: 100px; */
+    font-family: "PTSansbold";
+}
+
+/* block-result */
+.block-result__container {
+    margin-top: 15px;
+    background-color: #dcffdc;
+    height: 70px;
+    padding: 25px 0;
+    font-family: "PTSansbold";
+    font-weight: 400;
+    font-size: 1.1em;
+    /* box-shadow: 1px 1px 10px #a4efc4; */
+    color: #0fc52e;
+    font-weight: 800;
+    border: 2px solid #c0f9ca;
+}
+
+.text__name-week {
+    font-size: 1.2em;
+}
+
+/* footer */
+.footer__text {
+    font-family: "Bitter-Regular";
+}
+
+/* ---------------------------------------- */
+@media (max-width: 1599px) {}
+
+@media (max-width: 1199px) {}
+
+@media (max-width: 991px) {}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 575px) {
+    .text__name-week {
+        font-size: 1.1em;
+    }
+
+    .block-result__container {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 375px) {
+    .header__title {
+        padding-top: 15px;
+        font-size: 1.1em;
+    }
+
+    .header__row {
+        padding-top: 8px;
+    }
+}
