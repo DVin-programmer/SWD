@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Определитель недели</title>
-    <script src="./luxon.js"></script>
-    <script src="./src.js"></script>
+    <script src="./js/luxon.js"></script>
+    <script src="./js/src.js"></script>
 
     <!-- Bootstrap -->
     <link
@@ -18,88 +18,96 @@
 
     <link rel="stylesheet" href="css/font_styles.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+    <link rel="icon" href="img/fav.ico" type="image/x-icon" />
   </head>
   <body>
-    <!-- <label for="name">Name (4 to 8 characters):</label>
-    <input
-      type="text"
-      id="name"
-      name="name"
-      required
-      minlength="4"
-      maxlength="8"
-      size="10"
-    /> -->
-    <div class="container header__container">
-      <div class="row header__row">
-        <div
-          class="col header__columns text-center text-sm-center text-md-center text-lg-center"
-        >
-          <span class="header__title title">Определитель текущей недели</span>
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__logo logo">
+          <img
+            class="header__image image"
+            src="img/Emblem.svg"
+            alt="logo"
+            height="40px"
+          />
         </div>
+        <span class="header__title title">Определитель текущей недели</span>
       </div>
-    </div>
+    </header>
 
-    <div class="block-week-selector__container container container-md">
-      <div class="row block-week-selector__row">
-        <div
-          class="block-week-selector__columns col-12 col-sm-12 col-md-10 offset-lg-2 col-lg-8"
-        >
-          <label for="block-week-selector__select" class="text__label"
+    <section class="description-week">
+      <div class="container description-week__container">
+        <div class="format-week">
+          <label for="select" class="text__label"
             >Выберите формат вывода недели:</label
           >
-          <select id="block-week-selector__select" name="weekSelector">
-            <option value="upper_lower">Верхняя/Нижняя</option>
-            <option value="even_odd">Четная/Нечетная</option>
+          <select id="select" name="weekSelector" onchange="changeDate(this)">
+            <option value="upper_lower" class="item-selector">
+              Верхняя/Нижняя
+            </option>
+            <option value="even_odd" class="item-selector">
+              Нечетная/Четная
+            </option>
           </select>
         </div>
-      </div>
-      <div class="row block-week-selector__row">
-        <div
-          class="block-week-selector__columns col-12 col-sm-12 col-md-10 offset-lg-2 col-lg-8"
-        >
+        <div class="date-start">
           <label for="currentDate" class="text__label"
             >Введите дату начала обучения в этом семестре:</label
           >
           <br />
-          <input
-            class="block-week-selector__input"
-            type="date"
-            id="currentDate"
-            value="2022-09-05"
-          />
-          <button
-            class="block-week-selector__button btn btn-success"
-            type="submit"
-            id="submit"
-            onclick="defineWeek()"
-          >
-            Подтвердить
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="block-result__container container container-md container-sm container-lg"
-    >
-      <div class="row block-result__row">
-        <div
-          class="block-result__columns col-12 col-sm-12 offset-md-2 col-md-10 offset-lg-2 col-lg-8"
-        >
-          <div class="block-result__text">
-            <span class="text__name-week"
-              >Нажмите «Подтвердить», чтобы узнать текущую неделю.</span
+          <div class="calendar-items">
+            <input
+              class="input"
+              type="date"
+              id="currentDate"
+              value=""
+              onchange="changeDate(this)"
+            />
+            <button
+              class="button btn btn-success"
+              type="submit"
+              id="detWeek"
+              onclick="determineWeek()"
             >
+              Подтвердить
+            </button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="footer">
-      <span class="footer__text fixed-bottom text-center"
-        >© 2022, Винокурова Д.В.</span
-      >
-    </div>
+    <section class="result">
+      <div class="result__container container">
+        <div class="result__text">
+          <div class="text__name-week">
+            Нажмите «Подтвердить», чтобы узнать текущую неделю.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="semester-calendar">
+      <div class="container semester-calendar__container">
+        <div class="print-calendar">
+          <button
+            class="button btn btn-success"
+            type="submit"
+            id="printCalendar"
+            onclick="printCalendar()"
+          >
+            Распечатать календарь
+          </button>
+        </div>
+
+        <div class="calendar"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__text fixed-bottom text-center">
+        © 2023, Винокурова Д.В.
+      </div>
+    </footer>
   </body>
 </html>

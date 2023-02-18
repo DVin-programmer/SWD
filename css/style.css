@@ -8,84 +8,167 @@ html, body {
     min-width: 320px;
 }
 
-.row {
-    margin-right: 0;
-    margin-left: 0;
+.container {
+    margin: 0 auto;
 }
 
-/* header */
-.header__row {
-    box-shadow: 1px 1px 5px #fb9b2a;
-    background-color: #ffe797;
-    color: #ff6a00;
-    height: 40px;
+.button {
+    font-family: "Roboto", sans-serif;
+}
+
+
+/* -------- header -------- */
+.header {
+    margin: 0;
+}
+
+.header__container {
+    max-width: 100%;
+    box-shadow: 1px 1px 5px #0982aa;
+    background: #b9e9f9;
+    color: #0f8ac9;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__logo {
+    margin-right: 5px;
 }
 
 .header__title {
     padding: 7px;
-    margin-right: 5px;
     font-size: 1.4em;
     font-weight: 600;
-    font-family: "PTSansbold";
+    font-family: "PTSansbold", sans-serif;
+    vertical-align: middle;
 }
 
+/* -------- description-week  ----------*/
 .text__label {
-    font-family: "Bitter-Regular";
-    font-size: 1.1em;
+    font-family: Roboto;
+    font-size: 1em;
+    margin-right: 10px;
 }
 
-/* block-week-selector */
-.block-week-selector__container {
+.description-week {
+    margin: 0 auto;
     margin-top: 15px;
-    padding: 20px 20px;
+    padding: 20px 20px 0 20px;
     background-color: #ffffff;
-    box-shadow: 1px 1px 5px #bfcbc0;
     color: #000000;
 }
 
-.block-week-selector__row {
-    padding-top: 10px;
+.description-week .container {
+    max-width: 459px;
+    margin: 0 auto;
 }
 
-.block-week-selector__input {
-    margin-left: 10px;
-    font-family: "Bitter-Regular";
+.input {
+    font-family: "Bitter-Regular", sans-serif;
+    font-size: 12px;
+    margin-right: 10px;
 }
 
-#block-week-selector__select {
-    margin-left: 10px;
-    font-family: "Bitter-Regular";
-    font-weight: 400;
+#select {
+    font-size: 12px;
 }
 
-.block-week-selector__button {
-    margin-left: 10px;
-    /* width: 100px; */
-    font-family: "PTSansbold";
+.item-selector {
+    font-size: 12px;
 }
 
-/* block-result */
-.block-result__container {
-    margin-top: 15px;
+.calendar-items {
+    margin-bottom: 20px;
+}
+
+#printCalendar {
+    margin-left: 0;
+}
+
+/* -------- result -------- */
+.result {
+    max-width: 459px;
+    margin: 0 auto;
+}
+
+.result__container {
     background-color: #dcffdc;
-    height: 70px;
-    padding: 25px 0;
+    height: auto;
+    padding: 10px 0;
     font-family: "PTSansbold";
     font-weight: 400;
     font-size: 1.1em;
-    /* box-shadow: 1px 1px 10px #a4efc4; */
+    box-shadow: 1px 1px 10px #a4efc4;
     color: #0fc52e;
     font-weight: 800;
-    border: 2px solid #c0f9ca;
+}
+
+.result__text {
+    padding-left: 11px;
 }
 
 .text__name-week {
     font-size: 1.2em;
 }
 
-/* footer */
+/* -------- semester-calendar -------- */
+.semester-calendar__container {
+    max-width: max-content;
+}
+
+#printCalendar {
+    visibility: hidden;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+
+.semester-calendar__container {
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    margin: 0 auto;
+}
+
+table {
+    border-collapse: collapse;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 30px;
+}
+
+td,
+th {
+    border: 0.5px solid rgb(83 156 207);
+    padding: 3px;
+    text-align: center;
+    color: #0f8ac5;
+}
+
+th {
+    color: #0f8ac5;
+    font-weight: bold;
+    background-color: #86cdff;
+    font-family: "PTSansbold", sans-serif;
+}
+
+caption {
+    color: #0f8ac5;
+    text-align: center;
+    caption-side: top;
+    font-family: "PTSansbold", sans-serif;
+    font-size: 1.2em;
+}
+
+/* -------- footer -------- */
 .footer__text {
-    font-family: "Bitter-Regular";
+    font-family: "PTSansbold", sans-serif;
+    background: #b9e9f9;
+    padding: 8px 0;
+    border-top: 2px solid #94e4ff;
+    color: #0f8ac9;
 }
 
 /* ---------------------------------------- */
@@ -97,24 +180,78 @@ html, body {
 
 @media (max-width: 767px) {}
 
+@media (max-width: 680px) {
+    .description-week .container {
+        padding-left: 0;
+    }
+
+}
+
 @media (max-width: 575px) {
+    .description-week {
+        padding-top: 0px;
+    }
+
     .text__name-week {
         font-size: 1em;
     }
 
-    .block-result__container {
-        /* padding: 10px 20px; */
+    #select, .input {
+        font-size: 0.7em;
+    }
+
+    .result__container {
         height: auto;
+    }
+
+    .text__label {
+        font-size: 0.8em;
+    }
+
+    .button {
+        font-size: 0.8em;
+    }
+
+    #printCalendar {
+        display: none;
     }
 }
 
 @media (max-width: 375px) {
+    .header__container {
+        height: 40px;
+    }
+
     .header__title {
         padding-top: 15px;
         font-size: 1.1em;
     }
 
-    .header__row {
-        padding-top: 8px;
+    .header__image {
+        height: 30px;
     }
+}
+
+/* Печать */
+@media print {
+    .semester-calendar__container {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .header__container,
+    .description-week__container,
+    .result__container,
+    .footer, .print-calendar {
+        display: none;
+    }
+
+    #printCalendar {
+        visibility: hidden;
+    }
+
+    table {
+        text-align: left;
+    }
+
 }

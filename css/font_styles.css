@@ -17,3 +17,8 @@
     font-family: "Bitter-Regular";
     src: url("fonts/Bitter-Regular.ttf") format("truetype");
 }
+
+@font-face {
+    font-family: Roboto;
+    src: url("fonts/Roboto.ttf") format("truetype");
+}
