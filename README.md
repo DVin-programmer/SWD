@@ -10,7 +10,7 @@
 <br>![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
 
 ## Предпросмотр
-<br>![gif](./img/SWD.gif)
+<br>![gif](./img/SWD2.gif)
 
 
 # SWD - School Week Determiner - Определитель Учебной Недели
