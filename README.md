@@ -9,9 +9,6 @@
 [Демонстрация](https://dvin-programmer.github.io/SWD/)
 <br>![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
 
-## Предпросмотр
-<br>![gif](./img/SWD2.gif)
-
 
 # SWD - School Week Determiner - Определитель Учебной Недели
 Программа позволяет преподавателям и обучающимся различных высших и средних учебных
